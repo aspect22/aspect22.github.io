@@ -180,6 +180,19 @@ a {
        appearance: none;
 }
 
+.row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row .social-btn {
+  flex: 1 1 45%; /* two buttons per row, same width */
+  max-width: 30rem; /* optional, limits button size */
+}
+
 /* icon inside copy button: remove baseline offset */
 .copy-btn .copy-icon {
   display: block;
@@ -211,8 +224,12 @@ a {
   color: var(--footer-color);
 }
 
-/* Responsive tweaks */
+/* Remove row layout on small screens */
 @media (max-width: 40em) {
+  body {
+    background-image: none;
+    background-color: var(--bg-color);
+  }
   .profile {
     flex-direction: column;
   }
@@ -227,7 +244,15 @@ a {
   .header {
     min-width: 100%;
   }
-  .social-btn {
-    flex: 1 1 100%;
+  /* Social buttons take full width and no row spacing */
+  .row {
+    display: block; /* remove flex layout */
+    gap: 0; /* remove spacing */
+  }
+  .row .social-btn {
+    flex: none; /* remove flex sizing */
+    width: 100%; /* full width */
+    max-width: none; /* remove max-width */
+    margin-bottom: 1rem; /* optional spacing between buttons */
   }
 }/*# sourceMappingURL=styles.css.map */
