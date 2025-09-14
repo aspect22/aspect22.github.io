@@ -1,0 +1,186 @@
+:root {
+  --bg-color: #1e1a29; /* Dark desaturated purple (cleaner background) */
+  --text-color: #f2e9f3; /* Soft near-white lavender text for better contrast */
+  --link-color: #e684ae; /* Bright rose-pink for links */
+  --accent-color: #2a2236; /* Slightly lighter purple for cards/panels */
+  --hover-color: #ff99c8; /* Softer pastel pink hover highlight */
+  --footer-color: #3e3351; /* Darker purple for footer */
+  --border-radius: 0.8em;
+  --font-family: "Hack", monospace;
+}
+
+/* Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.5;
+  font-size: 1em;
+  /* Background GIF */
+  background: linear-gradient(rgba(30, 26, 41, 0.85), rgba(30, 26, 41, 0.85)), url("res/bg.gif") no-repeat center center fixed; /* GIF background */
+  background-size: cover; /* Make sure it covers whole screen */
+}
+
+.hiddenLink {
+  text-decoration: none !important;
+  color: var(--footer-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  background-color: var(--accent-color);
+  padding: 2em;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 15em;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  flex: 1;
+  min-width: 50%;
+}
+
+.header h1.username {
+  margin: 0;
+  font-size: 2.2em;
+  color: var(--link-color);
+}
+
+.header h3.subtext {
+  font-size: 1em;
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.header p {
+  margin: 0.3em 0;
+  font-size: 1em;
+}
+
+.welcome {
+  margin-top: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.connect {
+  margin-top: 0.8em;
+  font-size: 1em;
+  font-style: italic;
+}
+
+/* Socials */
+.socials {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.socials h2 {
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  color: var(--link-color);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+/* Social buttons */
+.social-btn {
+  display: flex; /* Flex for icon + text + copy button */
+  align-items: center;
+  justify-content: space-between; /* Text left, copy button right */
+  padding: 0.8em 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  flex: 1 1 auto;
+  text-align: left;
+}
+.social-btn i {
+  margin-right: 0.6em;
+}
+.social-btn:hover {
+  transform: translateY(-0.2em);
+  box-shadow: inset 0 0 0.5em rgba(255, 111, 163, 0.4);
+}
+
+/* Copy button */
+.copy-btn {
+  margin-left: 1em;
+  padding: 0.4em 0.8em;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--link-color);
+  background-color: transparent;
+  color: var(--link-color);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.copy-btn:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+}
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: var(--footer-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 40em) {
+  .profile {
+    flex-direction: column;
+  }
+  .logo img {
+    width: 100%;
+    max-width: 100%;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+  .header {
+    min-width: 100%;
+  }
+  .social-btn {
+    flex: 1 1 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
