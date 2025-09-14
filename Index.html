@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>OXYCODONE | Socials</title>
   <link rel="stylesheet" href="styles.css">
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-
+  <script>
+    function copyText(text, btn) {
+      // copy and show quick check feedback
+      navigator.clipboard.writeText(text).then(function() {
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-regular fa-circle-check copy-icon"></i>';
+        setTimeout(() => btn.innerHTML = original, 900);
+      }, function(err) {
+        alert('Failed to copy text: ' + err);
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
-
 <body>
   <div class="container">
     <!-- Profile Section -->
@@ -35,38 +42,46 @@
 
     <!-- Socials Section -->
     <div class="socials">
-        <h2>Socials</h2>
-        <div class="social-links">
+      <h2>Socials</h2>
 
-            <div class="social-btn">
-                <i class="fa-brands fa-x-twitter"></i>
-                <a href="https://twitter.com/oxydev_" target="_blank" rel="link noopener noreferrer">
-                    Twitter: @oxydev_
-                </a>
-                <button class="copy-btn" onclick="copyText('@oxydev_')">Copy</button>
-            </div>
+      <div class="social-links">
 
-            <div class="social-btn">
-                <i class="fa-brands fa-github"></i>
-                <a href="https://github.com/aspect22" target="_blank" rel="link noopener noreferrer">
-                    Github: aspect22
-                </a>
-                <button class="copy-btn" onclick="copyText('aspect22')">Copy</button>
-            </div>
-
-            <div class="social-btn">
-                <i class="fa-brands fa-discord"></i>
-                <a href="https://discord.com/users/1197894579320524842" target="_blank" rel="link noopener noreferrer">
-                    Discord: x69bit
-                </a>
-                <button class="copy-btn" onclick="copyText('x69bit')">Copy</button>
-            </div>
+        <div class="social-btn">
+          <i class="fa-brands fa-x-twitter brand-icon"></i>
+          <a href="https://twitter.com/femboy_aspect" target="_blank" rel="noopener noreferrer">
+            T witter: femboy_aspect
+          </a>
+          <button class="copy-btn" onclick="copyText('femboy_aspect', this)">
+            <i class="fa-regular fa-clipboard copy-icon"></i>
+          </button>
         </div>
+
+        <div class="social-btn">
+          <i class="fa-brands fa-github brand-icon"></i>
+          <a href="https://github.com/aspect22" target="_blank" rel="noopener noreferrer">
+            Github: aspect22
+          </a>
+          <button class="copy-btn" onclick="copyText('aspect22', this)">
+            <i class="fa-regular fa-clipboard copy-icon"></i>
+          </button>
+        </div>
+
+        <div class="social-btn">
+          <i class="fa-brands fa-discord brand-icon"></i>
+          <a href="https://discord.com/users/1197894579320524842" target="_blank" rel="noopener noreferrer">
+            Discord: x69bit
+          </a>
+          <button class="copy-btn" onclick="copyText('x69bit', this)">
+            <i class="fa-regular fa-clipboard copy-icon"></i>
+          </button>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <div class="footer">
     <p><a href="https://eternal-void.pages.dev/aboutme" target="_blank" rel="noopener noreferrer" class="hiddenLink">♡ This website is femboy certified ♡</a></p>
- </div>
+  </div>
 </body>
 </html>

@@ -1,12 +1,19 @@
 :root {
-  --bg-color: #1e1a29;         /* Dark desaturated purple (cleaner background) */
-  --text-color: #f2e9f3;       /* Soft near-white lavender text for better contrast */
-  --link-color: #e684ae;       /* Bright rose-pink for links */
-  --accent-color: #2a2236;     /* Slightly lighter purple for cards/panels */
-  --hover-color: #ff99c8;      /* Softer pastel pink hover highlight */
-  --footer-color: #3e3351;     /* Darker purple for footer */
+  --bg-color: #1e1a29;
+  --text-color: #f2e9f3;
+  --link-color: #e684ae;
+  --accent-color: #2a2236;
+  --hover-color: #ff99c8;
+  --footer-color: #3e3351;
   --border-radius: 0.8em;
   --font-family: "Hack", monospace;
+}
+
+/* predictable box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Base */
@@ -16,23 +23,21 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   line-height: 1.5;
-  font-size: 1em;
+  font-size: 1rem;
 
-  /* Background GIF */
-  background: 
-    linear-gradient(rgba(30, 26, 41, 0.85), rgba(30, 26, 41, 0.85)), /* Dark overlay */
-    url('res/bg.gif') no-repeat center center fixed; /* GIF background */
-  background-size: cover; /* Make sure it covers whole screen */
+  background:
+    linear-gradient(rgba(30, 26, 41, 0.85), rgba(30, 26, 41, 0.85)),
+    url('res/bg.gif') no-repeat center center fixed;
+  background-size: cover;
 }
 
-
-.hiddenLink{
-    text-decoration: none !important;
-    color: var(--footer-color);
+.hiddenLink {
+  text-decoration: none !important;
+  color: var(--footer-color);
 }
 
 a {
-color: var(--link-color);
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -41,7 +46,7 @@ color: var(--link-color);
   width: 90%;
   max-width: 70em;
   margin: 0 auto;
-  padding: 2em 0;
+  padding: 2rem 0;
 }
 
 /* Profile Section */
@@ -49,19 +54,19 @@ color: var(--link-color);
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2em;
+  gap: 2rem;
   background-color: var(--accent-color);
-  padding: 2em;
+  padding: 2rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 1em rgba(0,0,0,0.8);
+  box-shadow: 0 0 1rem rgba(0,0,0,0.8);
   flex-wrap: wrap;
 }
 
 .logo img {
   width: 100%;
-  max-width: 15em;
+  max-width: 15rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 0.6em rgba(0,0,0,0.4);
+  box-shadow: 0 0 0.6rem rgba(0,0,0,0.4);
 }
 
 .header {
@@ -70,107 +75,144 @@ color: var(--link-color);
 }
 
 .header h1.username {
-    margin: 0;
-    font-size: 2.2em;
-    color: var(--link-color);
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--link-color);
 }
 
 .header h3.subtext {
-    font-size: 1em;
-    font-style: italic;
-    color: var(--text-color);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-color);
 }
 
 .header p {
-  margin: 0.3em 0;
-  font-size: 1em;
+  margin: 0.3rem 0;
+  font-size: 1rem;
 }
 
 .welcome {
   margin-top: 0;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-.connect{
-  margin-top: 0.8em;
-  font-size: 1em;
+.connect {
+  margin-top: 0.8rem;
+  font-size: 1rem;
   font-style: italic;
 }
 
 /* Socials */
 .socials {
-  margin-top: 3em;
+  margin-top: 3rem;
   text-align: center;
 }
 
 .socials h2 {
-  margin-bottom: 1em;
-  font-size: 1.8em;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
   color: var(--link-color);
 }
 
 .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1rem;
   justify-content: center;
 }
 
-/* Social buttons */
+/* Social button row */
 .social-btn {
-  display: flex; /* Flex for icon + text + copy button */
-  align-items: center;
-  justify-content: space-between; /* Text left, copy button right */
-  padding: 0.8em 1em;
+  display: flex;
+  align-items: center;       /* vertical center for all children */
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
   border-radius: var(--border-radius);
   background-color: var(--accent-color);
   color: var(--text-color);
   font-weight: bold;
-  font-size: 1em;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 0 0.5em rgba(0,0,0,0.8);
+  font-size: 1rem;
+  transition: all 0.18s ease-in-out;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.8);
   flex: 1 1 auto;
   text-align: left;
-
-  i {
-    margin-right: 0.6em;
-  }
-
-  &:hover {
-    transform: translateY(-0.2em);
-    box-shadow: inset 0 0 0.5em rgba(255, 111, 163, 0.4);
-  }
 }
 
-/* Copy button */
+/* brand icon (left) */
+.social-btn > .brand-icon {
+  display: inline-block;
+  width: 1.25rem;        /* explicit width prevents leaking large sizes */
+  min-width: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-right: 0.8rem;
+  color: var(--link-color);
+  transition: color 0.18s;
+  vertical-align: middle;
+}
+
+/* anchor (text) */
+.social-btn a {
+  flex: 1;
+  color: var(--text-color);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/* Copy button: square, perfectly centered */
 .copy-btn {
-  margin-left: 1em;
-  padding: 0.4em 0.8em;
-  border-radius: var(--border-radius);
+  width: 2.2rem;               /* square */
+  height: 2.2rem;
+  padding: 0;                  /* remove padding to center icon exactly */
+  border-radius: 0.6rem;       /* slightly smaller radius for small control */
   border: 1px solid var(--link-color);
   background-color: transparent;
   color: var(--link-color);
-  font-size: 0.85em;
+
+  display: inline-flex;        /* center content */
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+  align-self: center;          /* force centering if parent flex changes */
 
-  &:hover {
-    background-color: var(--link-color);
-    color: var(--bg-color);
-    // box-shadow: 0 0 0.5em rgba(255, 111, 163, 0.4);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.footer{
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.9em;
-    color: var(--footer-color);
+/* icon inside copy button: remove baseline offset */
+.copy-btn .copy-icon {
+  display: block;
+  font-size: 1rem;    /* explicit size so it doesn't inherit larger sizes */
+  line-height: 1;
+  transform: translateY(0); /* tweakable micro-adjust here if needed */
+}
+
+/* hover & active styles for copy button (visual only) */
+.copy-btn:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+}
+
+/* Hover effects that do not change layout */
+.social-btn:hover > .brand-icon {
+  color: var(--hover-color);
+}
+.social-btn:hover {
+  box-shadow: 0 0 0.4rem rgba(255, 111, 163, 0.5);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--footer-color);
 }
 
 /* Responsive tweaks */
@@ -184,7 +226,7 @@ color: var(--link-color);
     max-width: 100%;
   }
 
-  img{
+  img {
     margin: 0 auto;
     display: block;
   }
